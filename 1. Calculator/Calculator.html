@@ -1,34 +1,76 @@
 <!DOCTYPE html>
-<h1>
-    Calculator
+<html>
+<head>
+    <title>Calculator</title>
     <link rel="stylesheet" href="styles.css">
-</h1>
-
+</head>
 <body>
+    <h1>Calculator</h1>
     <main>
-        <label for="input">Calculation:</label>
-        <input type="text" id="fname" name="fname"><br><br>
+        <label for="Num1">Number 1:</label>
+        <input type="text" id="Num1" name="Num1">
+        <label for="Num2">Number 2:</label>
+        <input type="text" id="Num2" name="Num2">
+
+        <button onclick="Add()">Add</button>
+        <button onclick="Subtract()">Subtract</button>
+        <button onclick="Multiply()">Multiply</button>
+        <button onclick="Divide()">Divide</button>
+        <button onclick="Reset()">Reset</button>
     </main>
-</body>
 
 <script>
-    var input = document.getElementById("input");
-    
-    if (input) {
-        document.querySelector("button").addEventListener("click", function() {
-            try {
-                var result = eval(input.value);
-                document.getElementById("Result: " + result);
-            } catch (e) {
-                document.getElementById("Invalid equation");
-            }
-        });
+    function getValues() {
+        var Value1 = parseFloat(document.getElementById("Num1").value);
+        var Value2 = parseFloat(document.getElementById("Num2").value);
+        if (isNaN(Value1) || isNaN(Value2)) {
+            document.getElementById("Result").innerText = "Invalid input";
+            throw "Invalid input";
+        }
+        return { Value1, Value2 };
     }
-    
+
+    function Add() {
+        try {
+            let { Value1, Value2 } = getValues();
+            let result = Value1 + Value2;
+            document.getElementById("Result").innerHTML = result;
+        } catch (e) {}
+    }
+
+    function Subtract() {
+        try {
+            let { Value1, Value2 } = getValues();
+            let result = Value1 - Value2;
+            document.getElementById("Result").innerHTML = result;
+        } catch (e) {}
+    }
+
+    function Multiply() {
+        try {
+            let { Value1, Value2 } = getValues();
+            let result = Value1 * Value2;
+            document.getElementById("Result").innerHTML = result;
+        } catch (e) {}
+    }
+
+    function Divide() {
+        try {
+            let { Value1, Value2 } = getValues();
+            let result = Value1 / Value2;
+            document.getElementById("Result").innerHTML = result;
+        } catch (e) {} 
+    }
+
+    function Reset() {
+        document.getElementById("Num1").value = '';
+        document.getElementById("Num2").value = '';
+        document.getElementById("Result").innerHTML = '';
+    }
 </script>
 
 <p>
-    Sum: <span id="myText"></span>
+    Result: <span id="Result"></span>
 </p>
-
+</body>
 </html>
