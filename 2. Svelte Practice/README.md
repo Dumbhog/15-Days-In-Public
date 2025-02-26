@@ -1,0 +1,1 @@
+These are a button tests I made to compare raw html with svelte for day 3 in Hackclub's 15-days-in-public!
