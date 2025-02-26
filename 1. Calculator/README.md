@@ -1,1 +1,1 @@
-This is a calculator I am trying to make as my first project in html! (Currently developing)
+This is a basic calculator I made for days 1-2 in Hackclub's 15-days-in-public!
