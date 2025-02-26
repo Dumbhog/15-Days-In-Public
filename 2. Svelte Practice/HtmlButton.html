@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Click Counter</title>
+</head>
+    
+<body> 
+    <h1>Click Counter: <span id="counter">0</span></h1>
+    <button id="increment">Click me!</button>
+
+    <script>
+
+        let counter = 0;
+
+        const displayCounter = document.getElementById("counter");
+        const increment = document.getElementById("increment");
+
+        increment.addEventListener("click", function() {
+            counter++;
+            displayCounter.textContent = counter;
+        });
+
+    </script>
+</body>
+</html>
