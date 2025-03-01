@@ -1,1 +1,0 @@
-This is a basic rock, paper, scissors game I made for days 5-6 in Hackclub's 15-days-in-public!
